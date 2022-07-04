@@ -46,8 +46,8 @@ app.get('/', (req, res) => {
   res.render('search')
 })
 // Create route for results
-app.get('/result', (req, res) => {
-  res.send('This is the results page')
+app.get('/results', (req, res) => {
+  res.render('results')
 })
 
 // Catch 404 and forward to error handler
