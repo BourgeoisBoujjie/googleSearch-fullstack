@@ -1,0 +1,121 @@
+/* Global */
+.search{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+.result-list{
+    font-family: Helvetica Arial sans-serif;
+    font-size: 14px;
+    margin-left: 140px;
+}
+
+/* Logos */
+div > img {
+    margin-top: 100px;
+    width: 150px;
+}
+.logo {
+    width: 100px;
+}
+
+/* Input Fields */
+.search-input {
+    border: 1px #c4c4c4 solid;
+    border-radius: 30px;    
+    color: #5b5b5b;
+    height: 35px;
+    margin-top: 20px;
+    width: 400px;
+}
+
+/* NAVBAR */
+nav {
+    display: grid;
+    grid-template-columns: 130px auto;
+    border-bottom: 1px solid #c4c4c4;
+}
+.result-form {
+    display: grid;
+    grid-template-columns: 420px auto;
+}
+.result-form input {
+    border: 1px #c4c4c4 solid;
+    border-radius: 30px;    
+    color: #5b5b5b;
+    height: 35px;
+    width: 400px;
+}
+
+
+/* Buttons */
+.searchButton {
+    height: 40px;    
+    background-color: #4285f3;
+    border: 1px #1a5fd0 solid;
+    border-radius: 4px;
+    color: white;    
+    display: block;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;    
+}
+.searchButton:hover {
+    background-color: #5998ff;
+    color: white;
+}
+.res-button {
+    height: 35px;
+    background-color: #4285f3;
+    border: 1px #1a5fd0 solid;
+    border-radius: 4px;
+    color: white;    
+    font-size: 12px;
+    margin-bottom: 10px;    
+    width: 80px;
+    padding: none;
+}
+.res-button:hover {
+    background-color: #5998ff;
+    color: white;
+}
+
+/* Results */
+ul li {
+    display: inline;
+    font-size: 12px;
+    margin-right: 10px;
+}
+.url {
+    margin-bottom: 0px;
+}
+h2 a {
+    font-size: 24px; 
+    /* font-style: none; */
+    text-decoration: none;  
+}
+.result-list > small {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 700px;
+}
+
+.resultTemplate {
+    margin-bottom: 40px;
+}
+.resultTemplate h2 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+.resultTemplate p {
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+.resultTemplate ul {
+    margin-top: 5px;
+}
