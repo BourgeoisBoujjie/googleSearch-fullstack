@@ -7,7 +7,7 @@
     font-size: 18px;
 }
 .result-list{
-    font-family: Helvetica Arial sans-serif;
+    font-family: Arial;
     font-size: 14px;
     margin-left: 140px;
 }
@@ -94,8 +94,9 @@ ul li {
     margin-bottom: 0px;
 }
 h2 a {
+    font-family: Arial;
     font-size: 24px; 
-    /* font-style: none; */
+    font-weight: normal;
     text-decoration: none;  
 }
 .result-list > small {
