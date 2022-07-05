@@ -90,15 +90,23 @@ ul li {
     font-size: 12px;
     margin-right: 10px;
 }
+ul  {
+    padding-left: 0;
+    padding-bottom: 15px;
+}
 .url {
-    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 h2 a {
     font-family: Arial;
     font-size: 24px; 
     font-weight: normal;
-    text-decoration: none;  
+    text-decoration: none;
+    padding-top: 0;      
 }
+/* .title {
+    padding-top: 0;
+} */
 .result-list > small {
     display: block;
     margin-top: 30px;

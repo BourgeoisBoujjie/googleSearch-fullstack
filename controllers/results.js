@@ -6,16 +6,16 @@ const router = express.Router()
 router.get('/', (req, res) => {
     let results = [
         {
-            title: 'JS tutorials',
+            title: 'JavaScript Tutorial - W3School',
             description: 'The best JavaScript tutorials in the galaxy!',
             url: 'https://www.w3schools.com',
             links: [
               {
                 title: 'JS for Beginners',
-                url: 'https://www.w3schools.com/js'
+                url: 'https://www.w3schools.com/js/js_intro.asp'
               }, {
                 title: 'JS for the Web',
-                url: 'https://www.w3schools.com/js'
+                url: 'https://www.w3schools.com/js/js_functions.asp'
               },
               {
                 title: 'JS for the Web',
