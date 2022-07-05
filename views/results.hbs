@@ -7,8 +7,20 @@
         </form>
     </nav>
     <div class="result-list">
-      <small>37 Results</small>
-      <div class="resultTemplate">
+      <small>37 Results</small>      
+      {{#each results as |result|}}
+      <small class="url">{{result.url}}</small>
+        <h2><a href="{{result.url}}">{{result.title}}</a></h2>
+        <p>{{result.description}}</p>
+        <ul>
+            {{#each links as |link|}}
+          <li><a href="{{link.url}}">{{link.title}}</a></li>
+          {{/each}}
+        </ul>
+        {{/each}}
+    </div>
+</div>
+{{!-- <div class="resultTemplate">
         <small class="url">www.w3school.com</small>
         <h2>
           <a href="https://www.w3schools.com/js/">JavaScript Tutorial - W3School</a>
@@ -87,6 +99,4 @@
             >
           </li>
         </ul>
-      </div>
-    </div>
-</div>
+      </div> --}}
