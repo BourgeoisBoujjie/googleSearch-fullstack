@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 
 // Create POST controller
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     let results = [
         {
             title: 'JavaScript Tutorial - W3School',
@@ -62,6 +62,10 @@ router.get('/', (req, res) => {
     ]
     res.render('results', {results})
   })
+
+//   router.post('/', (req, res) => {
+    
+//   })
 // Export module
 module.exports = router
 
