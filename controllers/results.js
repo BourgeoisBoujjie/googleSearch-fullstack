@@ -7,14 +7,14 @@ router.post('/', (req, res) => {
     let results = [
         {
             title: 'JavaScript Tutorial - W3School',
-            description: 'The best JavaScript tutorials in the galaxy!',
+            description: 'Well organized and easy to understand Web building tutorials with lots of examples of how',
             url: 'https://www.w3schools.com',
             links: [
               {
-                title: 'JS for Beginners',
+                title: 'JavaScript Introduction',
                 url: 'https://www.w3schools.com/js/js_intro.asp'
               }, {
-                title: 'JS for the Web',
+                title: 'JS Functions',
                 url: 'https://www.w3schools.com/js/js_functions.asp'
               },
               {
@@ -24,25 +24,25 @@ router.post('/', (req, res) => {
             ]
           },
           {
-            title: 'JS tutorials',
-            description: 'The best JavaScript tutorials in the galaxy!',
-            url: 'https://www.w3schools.com',
+            title: 'JavaScript | MDN',
+            description: 'JavaScript(JS) is a lightweight, interpreted, or just-in-time, compliled programming language with first-class functions',
+            url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
             links: [
               {
-                title: 'JS for Beginners',
-                url: 'https://www.w3schools.com/js'
+                title: 'JavaScript Operator',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators'
               }, {
-                title: 'JS for the Web',
-                url: 'https://www.w3schools.com/js'
+                title: 'JavaScript Code',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting'
               },
               {
-                title: 'JS for the Web',
-                url: 'https://www.w3schools.com/js'
+                title: 'JavaScript Meaning',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
               }
             ]
           },
           {
-            title: 'JS tutorials',
+            title: 'JavaScript - Wikipedia',
             description: 'The best JavaScript tutorials in the galaxy!',
             url: 'https://www.w3schools.com',
             links: [
@@ -60,6 +60,7 @@ router.post('/', (req, res) => {
             ]
           }
     ]
+    //filters the search result based on the hard coded data within the description for now
     results = results.filter(e => e.description.includes(req.body.searchTerm))
     console.log(req.body.searchTerm)
     res.render('results', {results})
