@@ -60,12 +60,13 @@ router.post('/', (req, res) => {
             ]
           }
     ]
+    results = results.filter(e => e.description.includes(req.body.searchTerm))
+    console.log(req.body.searchTerm)
     res.render('results', {results})
-  })
 
-//   router.post('/', (req, res) => {
-    
-//   })
+})
+
+  
 // Export module
 module.exports = router
 
