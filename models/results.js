@@ -14,12 +14,11 @@ mongoose.model('products', {
         required: true },
     links: [{
         title: {
-            type: String, 
-            required: true
+            type: String,
         },
         url: {
             type: String,
-            required: true
         }
     }]
   })
+  module.export = mongoose
