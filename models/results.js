@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
-const { router } = require('../app')
 
 // Create the results moodel
-mongoose.model('products', {
+let resultMod = mongoose.model('results', {
     title: { 
         type: String,
         required: true },
@@ -21,4 +20,4 @@ mongoose.model('products', {
         }
     }]
   })
-  module.export = mongoose
+  module.exports = resultMod

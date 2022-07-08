@@ -1,71 +1,85 @@
 // Import Packages
 const express = require('express')
+const res = require('express/lib/response')
 const router = express.Router()
+const Results = require('../models/results')
 
 // Create POST controller
-router.post('/', (req, res) => {
-    let results = [
-        {
-            title: 'JavaScript Tutorial - W3School',
-            description: 'Well organized and easy to understand Web building tutorials with lots of examples of how',
-            url: 'https://www.w3schools.com',
-            links: [
-              {
-                title: 'JavaScript Introduction',
-                url: 'https://www.w3schools.com/js/js_intro.asp'
-              }, {
-                title: 'JS Functions',
-                url: 'https://www.w3schools.com/js/js_functions.asp'
-              },
-              {
-                title: 'JS for the Web',
-                url: 'https://www.w3schools.com/js'
-              }
-            ]
-          },
-          {
-            title: 'JavaScript | MDN',
-            description: 'JavaScript(JS) is a lightweight, interpreted, or just-in-time, compliled programming language with first-class functions',
-            url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-            links: [
-              {
-                title: 'JavaScript Operator',
-                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators'
-              }, {
-                title: 'JavaScript Code',
-                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting'
-              },
-              {
-                title: 'JavaScript Meaning',
-                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
-              }
-            ]
-          },
-          {
-            title: 'JavaScript - Wikipedia',
-            description: 'The best JavaScript tutorials in the galaxy!',
-            url: 'https://www.w3schools.com',
-            links: [
-              {
-                title: 'JS for Beginners',
-                url: 'https://www.w3schools.com/js'
-              }, {
-                title: 'JS for the Web',
-                url: 'https://www.w3schools.com/js'
-              },
-              {
-                title: 'JS for the Web',
-                url: 'https://www.w3schools.com/js'
-              }
-            ]
-          }
-    ]
-    //filters the search result based on the hard coded data within the description for now
-    results = results.filter(e => e.description.includes(req.body.searchTerm))
-    console.log(req.body.searchTerm)
-    res.render('results', {results})
 
+router.get('/', (req, res) => {
+    res.render('results')
 })
+router.post('/', async(req, res) => {    
+    console.log(req.body.searchTerm)
+    let resultsNew = await Results.find({title: req.body.searchTerm})
+    console.log(resultsNew);
+    res.render("results", {results: resultsNew} )
+})
+// ^^^ render where and what 
+    // let results = [
+    //     {
+    //         title: 'JavaScript Tutorial - W3School',
+    //         description: 'Well organized and easy to understand Web building tutorials with lots of examples of how',
+    //         url: 'https://www.w3schools.com',
+    //         links: [
+    //           {
+    //             title: 'JavaScript Introduction',
+    //             url: 'https://www.w3schools.com/js/js_intro.asp'
+    //           }, {
+    //             title: 'JS Functions',
+    //             url: 'https://www.w3schools.com/js/js_functions.asp'
+    //           },
+    //           {
+    //             title: 'JS for the Web',
+    //             url: 'https://www.w3schools.com/js'
+    //           }
+    //         ]
+    //       },
+    //       {
+    //         title: 'JavaScript | MDN',
+    //         description: 'JavaScript(JS) is a lightweight, interpreted, or just-in-time, compliled programming language with first-class functions',
+    //         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    //         links: [
+    //           {
+    //             title: 'JavaScript Operator',
+    //             url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators'
+    //           }, {
+    //             title: 'JavaScript Code',
+    //             url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting'
+    //           },
+    //           {
+    //             title: 'JavaScript Meaning',
+    //             url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+    //           }
+    //         ]
+    //       },
+    //       {
+    //         title: 'JavaScript - Wikipedia',
+    //         description: 'The best JavaScript tutorials in the galaxy!',
+    //         url: 'https://www.w3schools.com',
+    //         links: [
+    //           {
+    //             title: 'JS for Beginners',
+    //             url: 'https://www.w3schools.com/js'
+    //           }, {
+    //             title: 'JS for the Web',
+    //             url: 'https://www.w3schools.com/js'
+    //           },
+    //           {
+    //             title: 'JS for the Web',
+    //             url: 'https://www.w3schools.com/js'
+    //           }
+    //         ]
+    //       }
+    // ]
+//     //filters the search result based on the hard coded data within the description for now
+//     results = results.filter(e => e.description.includes(req.body.searchTerm))
+//     console.log(req.body.searchTerm)
+//     res.render('results', {results})
+
+// })
+
+
 
   
 // Export module
